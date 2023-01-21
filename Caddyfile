@@ -1,0 +1,16 @@
+# Caddyfile Example
+
+# redirect web-project.localhost:443 to web-project_nginx:433 container
+web-project.localhost {
+    reverse_proxy web-project_nginx
+}
+
+# redirect web-project.localhost:80 to web-project_nginx:80 container
+web-project.localhost:80 {
+    reverse_proxy web-project_nginx:80
+}
+
+database.localhost {
+    reverse_proxy database_database
+}
+
