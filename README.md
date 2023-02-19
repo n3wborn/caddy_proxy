@@ -40,10 +40,19 @@ and caddy network too.
 ```bash
 git clone git remote add origin git@github.com:n3wborn/caddy_proxy.git
 cd caddy_proxy
-docker compose up
+make install
 ```
 
 ## Configure Reverse Proxy
 
 examples are already shown in Caddyfile.
 If you need more, take a looj at [caddy reverse proxy doc](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy)
+
+## Notes
+
+If you want you app to be available on "hello.localdev" in your browser.
+
+- configure your caddyfile accordingly
+- append `127.0.0.1 hello.localdev` to your /etc/hosts file
+- browse to [https://hello.localdev](https://hello.localdev)
+- enjoy
