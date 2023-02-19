@@ -1,16 +1,14 @@
 # Caddyfile Example
 
-# redirect web-project.localhost:443 to web-project_nginx:433 container
-web-project.localhost {
-    reverse_proxy web-project_nginx
+# If you want your host to understand app.locadev adress:
+#   /etc/hosts:
+#   127.0.0.1 app.localdev
+app.localdev:80 {
+  reverse_proxy web-project-nginx-1:80
 }
 
-# redirect web-project.localhost:80 to web-project_nginx:80 container
-web-project.localhost:80 {
-    reverse_proxy web-project_nginx:80
+# Personal website using HTTPS
+app.localdev:443 {
+  tls internal
+  reverse_proxy web-project-nginx-1:80
 }
-
-database.localhost {
-    reverse_proxy database_database
-}
-
