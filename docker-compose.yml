@@ -1,22 +1,25 @@
 services:
   caddy:
-    image: caddy
+    image: caddy:alpine
+    container_name: ${CONTAINER_NAME:-docker-reverse-proxy}
     restart: unless-stopped
+    networks:
+      - reverse_proxy
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     volumes:
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-    networks:
-      - caddy
-    hostname: caddy
 
 volumes:
   caddy_data:
+    name: caddy_data
   caddy_config:
+    name: caddy_config
 
 networks:
-  caddy:
-    external: true
+  reverse_proxy:
+    driver: "bridge"
+    name: ${NETWORK_NAME:-reverse_proxy}
