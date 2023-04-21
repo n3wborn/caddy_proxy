@@ -46,7 +46,7 @@ make install
 ## Configure Reverse Proxy
 
 examples are already shown in Caddyfile.
-If you need more, take a looj at [caddy reverse proxy doc](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy)
+If you need more, take a look at [Caddy reverse proxy doc](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy)
 
 ## Notes
 
