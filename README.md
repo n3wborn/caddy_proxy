@@ -38,7 +38,7 @@ and caddy network too.
 ## Install
 
 ```bash
-git clone git remote add origin git@github.com:n3wborn/caddy_proxy.git
+git clone https://github.com/n3wborn/caddy_proxy.git
 cd caddy_proxy
 make install
 ```
